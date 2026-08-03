@@ -71,7 +71,7 @@ renderTable(model)
 
 
 
-${renderFooter()}
+${renderFooter(model)}
 
 
 </div>
@@ -159,18 +159,22 @@ function renderHeader(model) {
  * Footer
  **************************************************************************/
 
-function renderFooter() {
+function renderFooter(model) {
 
   if (!SETTINGS.showFooter)
     return "";
 
+  const hasMeetingsLeft = Boolean(model.current || model.next);
+
+  const message = hasMeetingsLeft
+    ? SETTINGS.footerText
+    : "No more meetings scheduled today, have a blessed day!";
 
   return `
 
 <div class="footer">
 
-
-${escapeHtml(SETTINGS.footerText)}
+${escapeHtml(message)}
 
 </div>
 
