@@ -600,50 +600,6 @@ setInterval(updateClock, 1000);
 
 }
 
-document.getElementById("clock")
-.innerHTML =
-now.toLocaleTimeString(
-[],
-options
-);
-
-
-}
-
-
-
-/*setInterval(
-updateClock,
-1000
-);
-*/
-
-// clock-worker.js content, created inline as a Blob
-const workerCode = `
-  setInterval(() => postMessage(Date.now()), 1000);
-`;
-const blob = new Blob([workerCode], { type: 'application/javascript' });
-const clockWorker = new Worker(URL.createObjectURL(blob));
-
-clockWorker.onmessage = function (e) {
-  const clock = document.getElementById("clock");
-  if (!clock) return;
-  const now = new Date(e.data);
-  clock.innerHTML = now.toLocaleTimeString([], {
-    hour: "numeric",
-    minute: "2-digit"
-  });
-};
-
-
-</script>
-
-
-`;
-
-}
-
-
 
 /**************************************************************************
  * Clock formatting helper
