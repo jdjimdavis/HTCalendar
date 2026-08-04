@@ -112,7 +112,7 @@ const SETTINGS = {
   logoPadding: "10px",
 
   // Width of logo.
-  logoWidth: 160, // pixels — default/production size
+  logoWidth: 200, // pixels — default/production size
   
   /**********************************************************************
    * Display Text
