@@ -141,15 +141,16 @@ body {
 }
 
 .headerLogo {
-    width:auto;
-    max-height:7vh;
-    max-width:22vw;
-    object-fit:contain;
-    flex:0 1 auto;
-    min-width:0;
-    background:var(--logoBackground);
-    padding:var(--logoPadding);
-    border-radius:8px;
+    width: ${SETTINGS.logoWidth}px;
+    height: auto;
+    max-height: 10vh;
+    max-width: 30vw;
+    object-fit: contain;
+    flex: 0 1 auto;
+    min-width: 0;
+    background: var(--logoBackground);
+    padding: var(--logoPadding);
+    border-radius: 8px;
 }
 
 .headerCenter {
