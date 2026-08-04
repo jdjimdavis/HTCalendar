@@ -15,13 +15,27 @@
  */
 function doGet(e) {
   try {
-    const html = PropertiesService.getScriptProperties().getProperty("TODAY_HTML");
+    // Preview mode: live render with overridden logo size, bypasses cache entirely
+    if (e.parameter.logoSize) {
+      SETTINGS.logoWidth = parseInt(e.parameter.logoSize, 10) || SETTINGS.logoWidth;
+      SETTINGS.logoUrl = PropertiesService.getScriptProperties().getProperty("LOGO_URL") || "";
 
+      const icsUrl = PropertiesService.getScriptProperties().getProperty("MIO_ICS_URL");
+      const icsText = fetchCalendarWithCache(icsUrl);
+      const events = parseIcs(icsText);
+      const todaysEvents = filterToToday(events);
+      const html = renderHtml(todaysEvents);
+
+      return HtmlService.createHtmlOutput(html)
+        .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+    }
+
+    // Normal fast path — what Xibo actually hits
+    const html = PropertiesService.getScriptProperties().getProperty("TODAY_HTML");
     if (!html) {
       return HtmlService.createHtmlOutput(renderErrorPage("No calendar data yet — waiting for first refresh."))
         .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
     }
-
     return HtmlService.createHtmlOutput(html)
       .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
   }

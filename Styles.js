@@ -273,7 +273,7 @@ h1 {
 
     margin:0 auto 10px;
 
-    width:auto;
+    width: ${model.settings.logoWidth}px; }
 
     max-height:${SETTINGS.logoHeightPercent}vh;
 

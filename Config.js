@@ -111,6 +111,9 @@ const SETTINGS = {
   // Padding around the logo inside its background plate.
   logoPadding: "10px",
 
+  // Width of logo.
+  logoWidth: 160, // pixels — default/production size
+  
   /**********************************************************************
    * Display Text
    **********************************************************************/

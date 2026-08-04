@@ -153,6 +153,17 @@ This value can be changed in `Config.gs`.
 Web App
 ```
 
+## Version Control
+
+1. Make code changes using Visual Studio within the local file C:\jdjim\Documents\AppScriptProjects\<the app foldername>
+
+2. Push updates to GitHub and Google:
+  git add .
+  git commit -m "Your comments for the revisions"
+  git push
+  clasp.cmd push
+  clasp.cmd deploy -i YOUR_DEPLOYMENT_ID
+
 Recommended settings:
 
 - Execute as:
