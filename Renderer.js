@@ -12,7 +12,8 @@
  */
 function renderHtml(events) {
 
-
+  Logger.log(JSON.stringify(events, null, 2));
+  
   const model =
     buildDisplayModel(events);
 
