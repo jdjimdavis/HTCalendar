@@ -268,25 +268,6 @@ h1 {
 
 }
 
-.footerLogo {
-
-    display:block;
-
-    margin:0 auto 10px;
-
-    width: ${model.settings.logoWidth}px; }
-
-    max-height:${SETTINGS.logoHeightPercent}vh;
-
-    object-fit:contain;
-
-    background:var(--logoBackground);
-
-    padding:var(--logoPadding);
-
-    border-radius:8px;
-
-}
 
 .footer {
 
