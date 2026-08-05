@@ -437,130 +437,42 @@ ${ev.room}
  * Card Layout
  **************************************************************************/
 
-function renderCards(model) {
-
-
-return `
-
-
-<div class="content">
-
-
-<div class="cards">
-
-
-${
-
-model.events.map(renderCard).join("")
-
-}
-
-
-</div>
-
-
-</div>
-
-
-`;
-
-}
-
-
-
 function renderCard(ev) {
 
-
 let badge="";
-
 let statusClass="";
 
-
 if(ev.current) {
-
-
-badge =
-`
-<div class="badge current">
-NOW IN PROGRESS
-</div>
-`;
-
-statusClass="current";
-
-
+  badge = `<span class="badge current">NOW IN PROGRESS</span>`;
+  statusClass="current";
 }
-
-
 else if(ev.startingSoon) {
-
-
-badge =
-`
-<div class="badge starting">
-STARTING SOON
-</div>
-`;
-
-statusClass="starting";
-
-
+  badge = `<span class="badge starting">STARTING SOON</span>`;
+  statusClass="starting";
 }
-
-
 else if(ev.next) {
-
-
-badge =
-`
-<div class="badge next">
-UP NEXT
-</div>
-`;
-
-statusClass="next";
-
-
+  badge = `<span class="badge next">UP NEXT</span>`;
+  statusClass="next";
 }
-
-
 
 return `
-
 
 <div class="card ${statusClass}">
 
-
+<div class="cardTopRow">
 ${badge}
-
-
-
-<div class="cardTime">
-
-${ev.timeLabel}
-
+<div class="cardTime">${ev.timeLabel}</div>
 </div>
-
-
 
 <div class="cardTitle">
-
 ${ev.title}
-
 </div>
-
-
 
 <div class="cardRoom">
-
 ${ev.room}
-
 </div>
 
-
-
 </div>
-
 
 `;
 

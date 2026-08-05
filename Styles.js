@@ -271,7 +271,7 @@ h1 {
 
 .footer {
 
-    text-align:center;
+    text-align:right;
 
     margin-top:14px;
 
@@ -470,22 +470,20 @@ tbody tr.next {
 
 
 
+.cardTopRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
 .badge {
-
-  display:inline-block;
-
-  padding:
-    7px 18px;
-
-  border-radius:25px;
-
-  font-size:
-    .95vw;
-
-  font-weight:700;
-
-  margin-bottom:10px;
-
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 25px;
+    font-size: .85vw;
+    font-weight: 700;
+    margin-bottom: 0;
 }
 
 
