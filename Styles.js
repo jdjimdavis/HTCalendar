@@ -271,16 +271,15 @@ h1 {
 
 .footer {
 
-    text-align:right;
+  text-align:right;
 
-    margin-top:14px;
+  margin-top:20px;
 
-    padding-top:6px;
+  padding-top:6px;
 
-    color:var(--secondary);
+  color:var(--secondary);
 
-    font-size:.90vw;
-
+  font-size:1vw;
 }
 
 
@@ -557,16 +556,15 @@ tbody tr.next {
 
 .footer {
 
-  text-align:center;
+  text-align:right;
 
   margin-top:20px;
 
-  color:
-    var(--secondary);
+  padding-top:6px;
 
-  font-size:
-    1vw;
-
+  color:var(--secondary);
+  
+  font-size:1vw;
 }
 
 
