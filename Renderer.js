@@ -62,7 +62,7 @@ ${
 model.layout === "cards"
 
 ?
-renderCard(model)
+renderCard(model.current)
 
 :
 
