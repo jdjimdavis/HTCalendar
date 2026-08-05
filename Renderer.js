@@ -61,7 +61,7 @@ ${
 model.layout === "cards"
 
 ?
-renderCards(model)
+renderCard(model)
 
 :
 
