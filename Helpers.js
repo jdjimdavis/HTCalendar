@@ -24,39 +24,17 @@ function buildDisplayModel(events) {
       events.length
     );
 
+    const currentEvent = events.find(e => e.current);
+    const nextEvent = events.find(e => e.next);
 
-  return {
-
-
-    layout: layout,
-
-
-    density: density,
-
-
-    eventCount:
-      events.length,
-
-
-    events:
-      events.map(
-        buildEventDisplayModel
-      ),
-
-
-    current:
-      events.find(
-        e => e.current
-      ),
-
-
-    next:
-      events.find(
-        e => e.next
-      )
-
-
-  };
+    return {
+      layout: layout,
+      density: density,
+      eventCount: events.length,
+      events: events.map(buildEventDisplayModel),
+      current: currentEvent ? buildEventDisplayModel(currentEvent) : null,
+      next: nextEvent ? buildEventDisplayModel(nextEvent) : null
+    };
 
 }
 
