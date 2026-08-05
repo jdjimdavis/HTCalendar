@@ -60,13 +60,8 @@ ${renderHeader(model)}
 ${
 
 model.layout === "cards"
-
-?
-renderCard(model.current)
-
-:
-
-renderTable(model)
+  ? model.events.map(renderCard).join("")
+  : renderTable(model)
 
 }
 
