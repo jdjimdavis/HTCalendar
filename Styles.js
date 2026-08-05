@@ -269,20 +269,6 @@ h1 {
 }
 
 
-.footer {
-
-  text-align:right;
-
-  margin-top:20px;
-
-  padding-top:6px;
-
-  color:var(--secondary);
-
-  font-size:1vw;
-}
-
-
 
 /**********************************************************************
  * TABLE STYLE
